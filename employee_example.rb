@@ -11,9 +11,10 @@ employee1 = { 'last_name' => 'Morco', 'first_name' => 'Sami', 'salary' => 100000
 # employee2 = { 'first_name' => 'Andy', 'last_name' => 'Zhao', 'salary' => 100000, 'active' => true }
 puts "#{employee1['first_name']} #{employee1['last_name']} makes $#{employee1['salary']} a year."
 
-# new hash syntax
+# hash with symbols
 employee3 = { :first_name => 'Andy', :last_name => 'Zhao', :salary => 100000, :active => true }
 puts "#{employee3[:first_name]} #{employee3[:last_name]} makes $#{employee3[:salary]} a year."
 
+# new hash symbol syntax
 employee4 = { first_name: 'Brian', last_name: 'Rice', salary: 1, active: true }
 puts "#{employee4[:first_name]} #{employee4[:last_name]} makes $#{employee4[:salary]} a year."
