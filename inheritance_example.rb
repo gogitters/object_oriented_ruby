@@ -1,6 +1,6 @@
 class WheelThing 
-  def initialize
-    @speed = 0
+  def initialize(input_hash)
+    @speed = input_hash[:speed]
     @direction = 'north'
   end
 
@@ -18,19 +18,32 @@ class WheelThing
 end
 
 class Car < WheelThing
+  def initialize(input_hash)
+    super
+    @fuel = input_hash[:fuel]
+    @make = input_hash[:make]
+    @model = input_hash[:model]
+  end
+
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
 class Bike < WheelThing
+  def initialize(input_hash)
+    super
+    @type = input_hash[:type]
+    @weight = input_hash[:weight]
+  end
+
   def ring_bell
     puts "Ring ring!"
   end
 end
 
-car = Car.new
-bike = Bike.new
+car = Car.new(fuel: "diesel", make: "Honda", model: "Civic", speed: 60)
+bike = Bike.new(type: "roadbike", weight: "lightweight", speed: 15)
 p car
 car.accelerate
 bike.accelerate
