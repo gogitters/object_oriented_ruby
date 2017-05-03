@@ -3,6 +3,9 @@ class WheelThing
     @speed = input_hash[:speed]
     @direction = 'north'
   end
+end
+
+module WheelThingies
 
   def brake
     @speed = 0
@@ -18,6 +21,7 @@ class WheelThing
 end
 
 class Car < WheelThing
+  include WheelThingies
   def initialize(input_hash)
     super
     @fuel = input_hash[:fuel]
@@ -31,6 +35,8 @@ class Car < WheelThing
 end
 
 class Bike < WheelThing
+  include WheelThingies
+
   def initialize(input_hash)
     super
     @type = input_hash[:type]
